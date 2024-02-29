@@ -36,14 +36,21 @@ public class Produtos {
 		this.quantidade = quantidade;
 	}
 
-	public double totalEmEstoque() {
-		return getQuantidade();
+	public double totalValorEmEstoque() {
+		return preco * quantidade;
 	}
+
 	public void addProdutos(Integer quantidade) {
-		
+		this.quantidade += quantidade;
 	}
+
 	public void removeProdutos(Integer quantidade) {
-		
+		this.quantidade -= quantidade;
+	}
+
+	public String toString() {
+		return "Produto " + nome + ", $" + preco + ", " + quantidade + " unidade, Total: "
+				+ String.format("%.2f", totalValorEmEstoque());
 	}
 
 }
